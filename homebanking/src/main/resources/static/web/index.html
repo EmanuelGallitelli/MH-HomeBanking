@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+	Shine by TEMPLATE STOCK
+	templatestock.co @templatestock
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="images/bank.png" type="image/x-icon">
+	<title>MindHub | HomeBanking</title>
+
+	<!-- WEB FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet'
+		type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<!-- BOOTSTRAP -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- CUSTOM STYLING -->
+	<link href="css/styles.css" rel="stylesheet">
+	<!-- PRELOADER -->
+	<link href="css/loader.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="app">
+
+		<!-- PRELOADER -->
+		<div id="loader-wrapper">
+			<div id="loader">
+				<div class="sk-spinner sk-spinner-cube-grid">
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+					<div class="sk-cube"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- HEADER -->
+		<section id="header">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-8">
+						<img class="logo" src="images/logomh.png" />
+						<h1 class="white-text">Welcome to MindHub HomeBanking</h1>
+						<h5 class="white-text">The only way to do great work is to love what you do.</h5>
+						<div id="countdown" class="white-text"></div>
+					</div>
+				</div>
+			</div>
+			<div class="animation">
+				<a class="arrow-down-animation" data-scroll href="#nav"><i class="fa fa-angle-down"></i></a>
+			</div>
+		</section>
+
+		<!-- NAV -->
+		<nav id="nav">
+			<div class="site-title">HOMEBANKING</div>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="accounts.html">Accounts</a></li>
+				<li><a href="cards.html">Cards</a></li>
+				<li><a href="transactions.html">Transactions</a></li>
+				<li>
+					<a href="#">
+						<button class="logout" type="button" @click="logout">
+							<img src="images/log-out.png" alt="out">
+						</button>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- NAV ENDS-->
+		<!-- HEADER ENDS -->
+
+		<!-- CONTACT US -->
+		<section id="contact">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						<!-- CONTACT FORM -->
+						<form method="post" action="">
+							<p data-sr="enter top over 1s, wait 0.3s, move 24px, reset"
+								class="contact-info text-center">Fill up the form below. All fields are required.</p>
+							<div data-sr="enter left over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+									v-model="firstName">
+							</div>
+							<div data-sr="enter left over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+								<input type="text" class="form-control" id="lastName" name="lastName"
+									placeholder="Your Last Name" v-model="lastName">
+							</div>
+							<div data-sr="enter right over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+								<input type="email" class="form-control" id="email" name="email"
+									placeholder="Your Email" v-model="emailLogin">
+							</div>
+							<div data-sr="enter right over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+								<input type="password" class="form-control" id="password" name="password"
+									placeholder="Your Password" v-model="passwordLogin">
+							</div>
+						</form>
+						<!-- CONTACT FORM ENDS -->
+					</div>
+				</div>
+				<div class="buttonsIndex">
+					<div>
+						<button type="button" class="button-leweb" @click="register">Register</button>
+					</div>
+					<div>
+						<button type="button" class="button-leweb"><a href="login.html">Login</a></button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- CONTACT ENDS -->
+
+		<!-- SUBSCRIBE -->
+		<section id="subscribe">
+			<div class="container">
+				<i data-sr="ease-in over 1s, reset" class="fa fa-envelope icontop"></i>
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="white-text">Sign up to our
+							Newsletter</h2>
+						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="white-text">Stay up2date
+							with climb-up</h5>
+						<!-- MAILCHIMP FORM -->
+						<form id="mc_form" role="form">
+							<input data-sr="enter top over 1s, wait 0.3s, move 24px, reset" type="email"
+								class="form-control" id="mc-email" name="mc-email" placeholder="Your Email" />
+							<button data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" type="submit"
+								class="button-leweb">Submit</button>
+							<label for="mc-email" class="mc-email"></label>
+						</form>
+						<!-- MAILCHIMP FORM ENDS -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- SUBSCRIBE ENDS -->
+
+		<!-- ABOUT -->
+		<section id="about">
+			<div class="container">
+				<div class="row text-center">
+					<!-- Section 1 -->
+					<div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+						<i class="fa fa-laptop"></i>
+						<h3>Responsive Design</h3>
+						<div class="colored-line-small-center"></div>
+					</div>
+					<!-- Section 2 -->
+					<div data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="col-md-4 middle">
+						<i class="fa fa-lightbulb-o"></i>
+						<h3>Creative Design</h3>
+						<div class="colored-line-small-center"></div>
+					</div>
+					<!-- Section 3 -->
+					<div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+						<i class="fa fa-newspaper-o"></i>
+						<h3>News Ready</h3>
+						<div class="colored-line-small-center"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ABOUT ENDS -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="container">
+				<div class="row text-center">
+					<p>
+						&copy; 2022 MindHub | ADAPTED DESIGN BY Gallitelli Emanuel J.
+						<span class="social">
+							<a href="#"><i class="fa fa-facebook-square"></i></a>
+							<a href="#"><i class="fa fa-twitter-square"></i></a>
+							<a href="#"><i class="fa fa-google-plus-square"></i></a>
+						</span>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER ENDS -->
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- SMOOTH SCROLL -->
+	<script src="js/smooth-scroll.min.js"></script>
+	<!-- PARALLAX IMG -->
+	<script src="js/jquery.parallax-1.1.3.js"></script>
+	<!-- SCROLL REVEAL -->
+	<script src="js/scrollReveal.min.js"></script>
+	<!-- FUNCTIONS -->
+	<script src="js/functions.js"></script>
+	<script src="js/nav.js"></script>
+
+	<script src="https://unpkg.com/vue@3"></script>
+	<script src="js/index.js"></script>
+
+</body>
+
+</html>

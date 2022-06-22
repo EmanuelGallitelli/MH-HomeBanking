@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>HomeBanking</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <form class="form">
+            <div class="title">Welcome to MindHub HomeBanking</div>
+            <div class="subtitle">Client Manager</div>
+            <div class="input-container ic1">
+                <input id="firstname" class="input" type="text" placeholder=" " v-model="nombre" required>
+                <div class="cut"></div>
+                <label for="firstname" class="placeholder">First name</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="lastname" class="input" type="text" placeholder=" " v-model="apellido" required>
+                <div class="cut"></div>
+                <label for="lastname" class="placeholder">Last name</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="email" class="input" type="text" placeholder=" " v-model="email" required>
+                <div class="cut cut-short"></div>
+                <label for="email" class="placeholder">Email</label>
+            </div>
+            <button type="submit" class="botonSubmit" @click="enviarCliente">Submit</button>
+
+            <table class="table table-dark table-borderless">
+                <thead>
+                    <div class="subtitle">Client List</div>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>Eliminar</td>
+                </thead>
+
+                <tbody class="transicionDeTabla">
+                    <tr v-for="cliente in jsonClientes">
+                        <td>{{cliente.firstName}}</td>
+                        <td>{{cliente.lastName}}</td>
+                        <td>{{cliente.emailClient}}</td>
+                        <td><button class="botonSubmit" @click="eliminarFila(cliente._links.client.href)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <div class="json">
+            <table class="table table-dark table-borderless">
+                <div class="subtitle">Client REST response</div>
+                <pre class="subtitle">{{jsonClientes}}</pre>
+            </table>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

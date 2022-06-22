@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindHub | Cards</title>
+
+    <!-- WEB FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- BOOTSTRAP -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- CUSTOM STYLING -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- PRELOADER -->
+    <link href="css/loader.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- PRELOADER -->
+        <div id="loader-wrapper">
+            <div id="loader">
+                <div class="sk-spinner sk-spinner-cube-grid">
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER -->
+        <div id="headerAccount" class="header-banner">
+            <h1>TRANSACTION</h1>
+        </div>
+
+        <!-- NAV -->
+        <nav id="nav">
+            <div class="site-title">{{jsonClient.firstName + " " + jsonClient.lastName}}</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accounts.html">Acounts</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li>
+                    <a href="#">
+                        <button class="logout" type="button" @click="logout">
+                            <img src="images/log-out.png" alt="out">
+                        </button>
+                    </a>
+                </li>
+                <ul>
+        </nav>
+        <!-- NAV ENDS-->
+        <!-- HEADER ENDS -->
+
+        <!--FORM-->
+        <!-- CONTACT FORM -->
+        <section id="contact">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form method="post" action="">
+                            <p data-sr="enter top over 1s, wait 0.3s, move 24px, reset"
+                                class="contact-info text-center">Request new card.</p>
+                            <div data-sr="enter left over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+                                <select v-model="CardType" name="select" class="form-control">
+                                    <option value="" selected>Select Type Of Card</option>
+                                    <option value="DEBIT">Debit</option>
+                                    <option value="CREDIT">Credit</option>
+                                </select>
+
+                            </div>
+                            <div data-sr="enter left over 1s, wait 0.3s, move 24px, reset" class="form-group col-md-6">
+                                <select v-model="CardColor" name="select" class="form-control">
+                                    <option value="" selected>Select Color Of Card</option>
+                                    <option value="GOLD">Gold</option>
+                                    <option value="SILVER">Silver</option>
+                                    <option value="TITANIUM">Titanium</option>
+                                </select>
+                            </div>
+                        </form>
+                        <!-- CONTACT FORM ENDS -->
+                    </div>
+                </div>
+                <div class="buttonCreate">
+                    <button type="buttonCard" alt="add" @click="addCards">
+                        <i>C</i>
+                        <i>r</i>
+                        <i>e</i>
+                        <i>a</i>
+                        <i>t</i>
+                        <i>e</i>
+                        <i>&nbsp;</i>
+                        <i>C</i>
+                        <i>a</i>
+                        <i>r</i>
+                        <i>d</i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!--FORM ENDS-->
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row text-center">
+                    <p>
+                        &copy; 2022 MindHub | ADAPTED DESIGN BY Gallitelli Emanuel J.
+                        <span class="social">
+                            <a href="#"><i class="fa fa-facebook-square"></i></a>
+                            <a href="#"><i class="fa fa-twitter-square"></i></a>
+                            <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER ENDS -->
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- SMOOTH SCROLL -->
+    <script src="js/smooth-scroll.min.js"></script>
+    <!-- PARALLAX IMG -->
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <!-- SCROLL REVEAL -->
+    <script src="js/scrollReveal.min.js"></script>
+    <!-- FUNCTIONS -->
+    <script src="js/functions.js"></script>
+    <script src="js/nav.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/cards.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
