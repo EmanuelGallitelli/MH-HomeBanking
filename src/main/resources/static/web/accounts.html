@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindHub | Accounts</title>
+
+    <!-- WEB FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- BOOTSTRAP -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- CUSTOM STYLING -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- PRELOADER -->
+    <link href="css/loader.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- PRELOADER -->
+        <div id="loader-wrapper">
+            <div id="loader">
+                <div class="sk-spinner sk-spinner-cube-grid">
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                    <div class="sk-cube"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER -->
+        <div id="headerAccount" class="header-banner">
+            <h1>ACCOUNTS</h1>
+        </div>
+        <div class="clear"></div>
+
+        <!-- NAV -->
+        <nav id="nav">
+            <div class="site-title">{{jsonClient.firstName + " " + jsonClient.lastName}}</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Acounts</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li>
+                    <a href="#">
+                        <button class="logout" type="button" @click="logout">
+                            <img src="images/log-out.png" alt="out">
+                        </button>
+                    </a>
+                </li>
+                <ul>
+        </nav>
+        <!-- NAV ENDS-->
+        <!-- HEADER ENDS -->
+
+        <!-- ACCOUNTS -->
+        <div class="contenedor">
+            <div class="containerCards">
+                <div id="accounts" class="cards">
+                    <div class="contact">Accounts</div>
+                    <div class="card active" id="overview">
+                        <div class="card-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Number</th>
+                                        <th>Creation Date</th>
+                                        <th>Balance</th>
+                                        <th>Transaction</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="account in accounts">
+                                        <td>{{account.number}}</td>
+                                        <td>{{new Date(account.creationDate).toLocaleString()}}</td>
+                                        <td>{{account.balance}}</td>
+                                        <td><a :href="'account.html?id=' + account.id">
+                                                <button class="buttonAdd" alt="add">
+                                                    <i>T</i>
+                                                    <i>r</i>
+                                                    <i>a</i>
+                                                    <i>n</i>
+                                                    <i>s</i>
+                                                    <i>a</i>
+                                                    <i>c</i>
+                                                    <i>t</i>
+                                                    <i>i</i>
+                                                    <i>o</i>
+                                                    <i>n</i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accounts" class="cards">
+                    <div class="contact">Loans</div>
+                    <div class="card active" id="overview">
+                        <div class="card-content">
+                            <div class="container-loan">
+                                <div class="card-inputs">
+                                    <h5>Do you have outstanding loans?</h5>
+                                    <label>
+                                        <input type="radio" v-model="tableLoan" v-bind:value="true"> Yes
+                                    </label>
+                                    <label>
+                                        <input type="radio" v-model="tableLoan" v-bind:value="false" checked> No
+                                    </label>
+
+                                    <div class="containerLoansApply">
+                                        <button type="button"> <a href="loan-application.html">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="card-loan">
+                                    <table v-if="tableLoan" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Amount</th>
+                                                <th>Payments</th>
+                                                <th>Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="loan in loans">
+                                                <td>{{loan.amount}}</td>
+                                                <td>{{loan.payments}}</td>
+                                                <td>{{loan.name}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table v-else="" class="table">
+                                        <tr>
+                                            <th>
+                                                <h3>You don't have a loan</h3>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCOUNTS ENDS -->
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row text-center">
+                    <p>
+                        &copy; 2022 MindHub | ADAPTED DESIGN BY Gallitelli Emanuel J.
+                        <span class="social">
+                            <a href="#"><i class="fa fa-facebook-square"></i></a>
+                            <a href="#"><i class="fa fa-twitter-square"></i></a>
+                            <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER ENDS -->
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- SMOOTH SCROLL -->
+    <script src="js/smooth-scroll.min.js"></script>
+    <!-- PARALLAX IMG -->
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <!-- SCROLL REVEAL -->
+    <script src="js/scrollReveal.min.js"></script>
+    <!-- FUNCTIONS -->
+    <script src="js/functions.js"></script>
+    <script src="js/nav.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="js/accounts.js"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+</body>
+
+</html>
